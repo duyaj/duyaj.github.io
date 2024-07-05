@@ -132,7 +132,7 @@ const Home = () => (
         </Heading>
         <List>
           <ListItem>
-            <Link href="https://github.com/duyaj" target="_blank">
+            <Link href="google.com" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
