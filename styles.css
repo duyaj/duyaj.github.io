@@ -1,0 +1,383 @@
+:root {
+  --paper: #f8f1e4;
+  --paper-deep: #f1e4cf;
+  --ink: #1f1b16;
+  --muted: #5f5448;
+  --line: #2e241b;
+  --green: #b8dfb6;
+  --yellow: #f6dc92;
+  --pink: #f2c5d1;
+  --white: #fffdf8;
+  --shadow: 0 14px 0 rgba(46, 36, 27, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.65), transparent 32%),
+    linear-gradient(180deg, var(--paper) 0%, #f6ead7 100%);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  border: 3px solid rgba(46, 36, 27, 0.18);
+  border-radius: 999px;
+}
+
+body::before {
+  top: 32px;
+  right: 7vw;
+  width: 120px;
+  height: 36px;
+  transform: rotate(12deg);
+}
+
+body::after {
+  left: 4vw;
+  bottom: 80px;
+  width: 88px;
+  height: 88px;
+  border-style: dashed;
+}
+
+.page-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 56px;
+}
+
+.topbar,
+.hero-card,
+.project-card,
+.about-card,
+.timeline-card,
+.contact-card {
+  border: 3px solid var(--line);
+  border-radius: 28px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 250, 240, 0.92));
+}
+
+.brand,
+.topbar a,
+.project-card a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand {
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.6rem;
+}
+
+.topbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.topbar-links a {
+  font-size: 0.98rem;
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.8fr);
+  gap: 24px;
+  padding: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.95), rgba(249, 237, 210, 0.95));
+}
+
+.eyebrow,
+.section-label,
+.project-type,
+.note-title {
+  margin: 0 0 10px;
+  font-family: "Patrick Hand", cursive;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+a {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 10ch;
+  margin-bottom: 18px;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.94;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 1.7rem;
+}
+
+.lede,
+.hero-note,
+.project-card p,
+.about-card p,
+.timeline-card,
+.contact-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.hero-actions,
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--ink);
+  box-shadow: 0 7px 0 rgba(46, 36, 27, 0.12);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.button:hover,
+.button:focus-visible,
+.project-card a:hover,
+.project-card a:focus-visible,
+.topbar a:hover,
+.topbar a:focus-visible {
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: var(--green);
+}
+
+.secondary {
+  background: transparent;
+}
+
+.hero-note {
+  align-self: start;
+  padding: 22px;
+  border: 3px dashed var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  transform: rotate(1.5deg);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  margin-bottom: 18px;
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  background: var(--pink);
+  font-family: "Patrick Hand", cursive;
+  font-size: 2rem;
+}
+
+.section {
+  margin-top: 28px;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 18px;
+}
+
+.project-grid,
+.about-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-card,
+.about-card,
+.timeline-card,
+.contact-card {
+  padding: 24px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 52px;
+  height: 52px;
+  border: 3px solid rgba(46, 36, 27, 0.2);
+  border-radius: 18px 24px 18px 24px;
+  transform: rotate(12deg);
+}
+
+.accent-green {
+  background: linear-gradient(180deg, #fdfcf7, #eef9ec);
+}
+
+.accent-yellow {
+  background: linear-gradient(180deg, #fffdf7, #fbf3d4);
+}
+
+.accent-pink {
+  background: linear-gradient(180deg, #fffdf8, #f9e8ed);
+}
+
+.tags,
+.timeline {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.tags li {
+  padding: 8px 12px;
+  border: 2px solid rgba(46, 36, 27, 0.7);
+  border-radius: 999px;
+  font-size: 0.92rem;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.about-grid {
+  grid-template-columns: 1.2fr 0.95fr;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 2px dashed rgba(46, 36, 27, 0.2);
+}
+
+.timeline li:first-child {
+  border-top: 0;
+  padding-top: 4px;
+}
+
+.year {
+  font-weight: 700;
+}
+
+.contact-card {
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(241, 228, 207, 0.98));
+}
+
+@media (max-width: 920px) {
+  .hero-card,
+  .project-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1120px);
+    padding-top: 12px;
+    padding-bottom: 32px;
+  }
+
+  .topbar,
+  .hero-card,
+  .project-card,
+  .about-card,
+  .timeline-card,
+  .contact-card {
+    border-radius: 24px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-card,
+  .project-card,
+  .about-card,
+  .timeline-card,
+  .contact-card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: clamp(2.7rem, 14vw, 4rem);
+  }
+
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
